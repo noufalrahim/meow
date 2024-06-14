@@ -36,10 +36,17 @@ function App() {
     }
   }
 
-  React.useEffect(() => {
-    generateFact();
-
-  }, [generateFact]);
+  React.useEffect(async () => {
+    try {
+      setLoading(true);
+      const response = await fetch(`${BASEURL}?lang=${chosenLanguage}&count=${numberOfFacts}`);
+      const data = await response.json();
+      setLoading(false);
+      setMeowFacts(data.data);
+    } catch (error) {
+      console.log(error);
+    }
+  }, []);
 
   return (
     <div>
