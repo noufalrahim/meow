@@ -36,17 +36,23 @@ function App() {
     }
   }
 
-  React.useEffect(async () => {
-    try {
-      setLoading(true);
-      const response = await fetch(`${BASEURL}?lang=${chosenLanguage}&count=${numberOfFacts}`);
-      const data = await response.json();
-      setLoading(false);
-      setMeowFacts(data.data);
-    } catch (error) {
-      console.log(error);
+  React.useEffect(() => {
+
+    async function fetchData() {
+      try {
+        setLoading(true);
+        const response = await fetch(`${BASEURL}?lang=${chosenLanguage}&count=${numberOfFacts}`);
+        const data = await response.json();
+        setLoading(false);
+        setMeowFacts(data.data);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }, []);
+
+    fetchData();
+  
+  }, [chosenLanguage, numberOfFacts]);
 
   return (
     <div>
