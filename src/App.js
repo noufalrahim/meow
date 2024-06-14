@@ -38,8 +38,8 @@ function App() {
 
   React.useEffect(() => {
     generateFact();
-    
-  }, []);
+
+  }, [generateFact]);
 
   return (
     <div>
