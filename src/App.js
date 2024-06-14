@@ -38,6 +38,7 @@ function App() {
 
   React.useEffect(() => {
     generateFact();
+    
   }, []);
 
   return (
