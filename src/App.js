@@ -1,8 +1,6 @@
 
 import './App.css';
 import React, { useState } from 'react';
-import ClipLoader from "react-spinners/ClipLoader";
-import { CSSProperties } from "react";
 import { PacmanLoader } from 'react-spinners';
 
 const override = {
