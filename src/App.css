@@ -36,3 +36,31 @@
     transform: rotate(360deg);
   }
 }
+
+.App {
+  height: 100vh;
+  background-color: #1A202C; 
+  align-items: center;
+  justify-content: center;
+  display: flex; 
+}
+
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: #171A23;
+  width: 60%;
+  color: white;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+}
+
+input[type=number]{
+  -moz-appearance: textfield;
+}
